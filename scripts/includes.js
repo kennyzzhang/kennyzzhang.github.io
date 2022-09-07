@@ -3,8 +3,9 @@ window.addEventListener('DOMContentLoaded', (e) => {
   Array.from(document.getElementsByClassName('include')).map(async elt => {
     let classes = Array.from(elt.classList.values());
     let include_class_name = classes.find(s => s.startsWith('include_'));
-    let include_name = include_class_name.replace(/^include_/, '') + '.html';
-    let include_response = await fetch(include_name);
+    let include_name = include_class_name.replace(/^include_/, '');
+    let include_file_name = include_name + '.html';
+    let include_response = await fetch(include_file_name);
     let include_text = include_response.text();
     let include_doc = parser.parseFromString(include_text, 'text/html');
     let include_elt = include_doc.getElementById(include_name);
