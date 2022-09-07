@@ -11,7 +11,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     document.head.append(...include_doc.head.children);
     let include_elt = include_doc.getElementById(include_name);
     include_elt.removeAttribute('id');
-    include_elt.classList.add(include_class_name);
+    include_elt.classList.add(include_name);
     elt.replaceWith(include_elt);
   });
 });
