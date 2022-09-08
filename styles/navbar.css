@@ -5,6 +5,9 @@
 
 .navbar > * {
   flex: 1;
+}
+
+.navbar_link {
   padding: 1em;
-  background: blue;
+  background: grey;
 }
