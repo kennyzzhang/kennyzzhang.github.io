@@ -6,3 +6,18 @@ body {
   max-width: 12in;
   margin: auto;
 }
+
+.hover_below_menu > .hover_below_content_wrapper {
+  position: relative;
+}
+
+.hover_below_menu > .hover_below_content {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: none;
+}
+
+.hover_below_menu:hover > .hover_below_content {
+  display: block;
+}
