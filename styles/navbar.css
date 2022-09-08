@@ -6,4 +6,5 @@
 .navbar > * {
   flex: 1;
   padding: 1em;
+  background: blue;
 }
