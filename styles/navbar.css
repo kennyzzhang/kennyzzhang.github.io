@@ -1,6 +1,7 @@
 .navbar {
   display: flex;
   justify-content: space-evenly;
+  gap: 1em;
 }
 
 .navbar > * {
@@ -10,4 +11,5 @@
 .navbar_link {
   padding: 1em;
   background: grey;
+  text-align: center;
 }

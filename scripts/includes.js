@@ -8,6 +8,9 @@ window.addEventListener('DOMContentLoaded', (e) => {
     let include_response = await fetch(include_file_name);
     let include_text = await include_response.text();
     let include_doc = parser.parseFromString(include_text, 'text/html');
+    for (let child in ...include_doc.head_children) {
+      child.addEventListener('load', (evt) => {console.log(evt); console.log(child)});
+    }
     document.head.append(...include_doc.head.children);
     let include_elt = include_doc.getElementById(include_name);
     include_elt.removeAttribute('id');
