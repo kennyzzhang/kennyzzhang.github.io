@@ -24,7 +24,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
       head_elts.map(head_elt => new Promise((resolve, reject) => {
         head_elt.addEventListener('load', (evt) => {resolve()});
         head_elt.addEventListener('error', (evt) => {
-          console.warn("Include header element error", evt, header_elt);
+          console.warn("Error including head element", evt, head_elt);
           resolve()
         });
      }))
