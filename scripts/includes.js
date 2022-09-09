@@ -22,6 +22,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     head_elts = [...include_doc.head.children];
     head_elts_loaded = Promise.all(head_elts.map(head_elt => new Promise((resolve, reject) => {
       head_elt.addEventListener('load', (evt) => {console.log(evt); console.log(head_elt); resolve()});
+      head_elt.addEventListener('error', (evt) => {console.log(evt); console.log(head_elt); resolve()});
     }))).then(() => {
       elt.replaceWith(include_elt);
     });
