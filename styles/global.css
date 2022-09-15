@@ -25,7 +25,3 @@ body {
 .hflex {
   display: flex;
 }
-
-.hfill {
-  flex: 1;
-}
