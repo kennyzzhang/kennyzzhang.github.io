@@ -21,3 +21,11 @@ body {
 .hover_below_menu:hover > .hover_below_content_wrapper > .hover_below_content {
   display: block;
 }
+
+.hflex {
+  display: flex;
+}
+
+.hfill {
+  flex: 1;
+}
