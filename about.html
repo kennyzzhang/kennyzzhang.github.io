@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="styles/global.css" />
     <link rel="icon" href="images/icon.png" type="image/png" />
     <script src="scripts/includes.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   </head>
   <body>
     <div class="include include_main_header"></div>
@@ -113,31 +115,38 @@
         (abuse?) a lot of technical mechanics hidden in the internals of
         Minecraft.
       </p>
-      <p>
-        The first idea is that the game processes the world in a loop, and that
-        this loop is timed to run 20 times per second.
-        Each pass through the loop is a tick, and you start off doing redstone
-        by taking events that you want to happen in a certain order, and using
-        delay circuitry to orchestrate the events.
-        However, as you learn more about the game, about the order of events
-        withing a single pass through the loop, you can start to manipulate
-        events happening within a single tick.
-        You learn about block updates, how instead of updating every block in
-        the world on every game tick, changes made to the world are processed
-        locally by having block state changes send notifiers to neighboring
-        blocks, which may update their own state and recursively propagate more
-        notifiers.
-        You learn about how components like repeaters and redstone torces create
-        delay by scheduling &lsquo;tile ticks,&rsquo; and you learn how to
-        manipulate this queue of tile ticks to order events within a tick.
-        You learn about how pistons operate on a different system of
-        &lsquo;block events,&rsquo;, and how manipulating block events enables
-        complex behaviors such as instant wire, 0-tick pulses, deleting any
-        block &mdash; even if you're not supposed to be able to break it, and
-        several duplication glitches.
-        In terms of my block elevator, I heavily utilized 0-tick pulses to
-        transport blocks instantly within a tick.
-      </p>
+      <div class="hflex">
+        <div>
+          <p>
+            The first idea is that the game processes the world in a loop, and that
+            this loop is timed to run 20 times per second.
+            Each pass through the loop is a tick, and you start off doing redstone
+            by taking events that you want to happen in a certain order, and using
+            delay circuitry to orchestrate the events.
+            However, as you learn more about the game, about the order of events
+            withing a single pass through the loop, you can start to manipulate
+            events happening within a single tick.
+            You learn about block updates, how instead of updating every block in
+            the world on every game tick, changes made to the world are processed
+            locally by having block state changes send notifiers to neighboring
+            blocks, which may update their own state and recursively propagate more
+            notifiers.
+            You learn about how components like repeaters and redstone torces create
+            delay by scheduling &lsquo;tile ticks,&rsquo; and you learn how to
+            manipulate this queue of tile ticks to order events within a tick.
+            You learn about how pistons operate on a different system of
+            &lsquo;block events,&rsquo;, and how manipulating block events enables
+            complex behaviors such as instant wire, 0-tick pulses, deleting any
+            block &mdash; even if you're not supposed to be able to break it, and
+            several duplication glitches.
+            In terms of my block elevator, I heavily utilized tile tick order to
+            generate 0-tick pulses to transport blocks instantly within a tick.
+          </p>
+        </div>
+        <div>
+          <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/xCQAbt8utX0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
       <p>
         Technical Minecraft has advanced to the point at which people are diving
         into the game's code, tracing game execution to find ways to break the
@@ -210,7 +219,10 @@
             <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/039AJu4sMc8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
           <div>
-            <embed width="560" height="315" src="images/retainedspeed.mp4" title="Celeste obscure techniques" />
+            <video width="560" height="315" controls loop poster="/images/retainedspeed_thumb.mp4">
+              <source src="/images/retainedspeed.mp4" type="video/mp4" />
+              A video demonstrating obscure techniques in Celeste.
+            </video>
           </div>
         </div>
       </div>
@@ -218,20 +230,50 @@
         Poi Flow/Glowstringing
       </h2>
       <div class="hflex">
-        <p>
-          Outside of gaming, I enjoy practicing a form of dance involving
-          manipulating weighted objects on the end of strings.
-          If you've swung your lanyard around a lot, think about doing it with two
-          lanyards, and the types of patterns you can trace.
-          I've performed with a club on my campus called SBU Flow, and have
-          learned a lot of fancy tricks.
-          It's been quite fun to not just amaze audiences with complex light
-          patterns, but also teach the moves to other people.
-          So much of the art takes copius amounts of muscle memory, and trying to
-          transfer knowledge of something you do instinctively is a unique and fun
-          challenge.
-        </p>
-        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/QeBqUIyZFPU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div>
+          <p>
+            Outside of gaming, I enjoy practicing a form of dance involving
+            manipulating weighted objects on the end of strings.
+            If you've swung your lanyard around a lot, think about doing it with
+            two lanyards, and the types of patterns you can trace.
+            I've performed with a club on my campus called SBU Flow, and have
+            learned a lot of fancy tricks.
+            It's been quite fun to not just amaze audiences with complex light
+            patterns, but also teach the moves to other people.
+            So much of the art takes copius amounts of muscle memory, and trying
+            to transfer knowledge of something you do instinctively is a unique
+            and fun challenge.
+          </p>
+          <p>
+            There's also a surprising tidbit of math that shows up when you
+            start to practicing patterns called &lsquo;inspin&rsquo; and
+            &lsquo;antispin&rsquo; patterns.
+            When you spin the poi in one direction, and move your arm in a
+            circle in the same direction as the poi, it is called an
+            &lsquo;inspin&rsquo; pattern.
+            When you move your arm in the opposite direction, it is called an
+            &lsquo;antispin&rsquo; pattern.
+            These patterns trace out interesting spirograph patterns.
+            Something strange arises when you start to practice these patterns.
+            A lot of people, including myself, tend to count poi rotations by
+            when the poi is pointing straight towards the ground.
+            If you count the number of poi rotations in a 4 petal inspin
+            pattern, you'll notice that there are 5 down beats &mdash; one extra
+            beat is present.
+            If you count the number of poi rotations in a 4 petal antispin
+            pattern, you'll notice that there are only 3 down beats &mdash; one
+            beat is missing.
+            This is because your arm moving in a circle either adds or removes
+            a rotation from the poi, depending on if you're following the poi's
+            direction or going the opposite direction.
+            To put it more mathematically, let \(f(t)=(\cos t,\sin t)\).
+            Then \(f(t)+f(5t)\) and \(f(t)+f(-3t)\) both produce 90&deg;
+            rotationally symmetric patterns.
+          </p>
+        </div>
+        <div>
+          <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/QeBqUIyZFPU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
       </div>
     </div>
   </body>
