@@ -16,11 +16,11 @@
       </h1>
       <figure>
         <blockquote cite="http://catb.org/jargon/html/personality.html">
-          Hackers are &lsquo;control freaks&rsquo; in a way that has nothing to do
-          with the usual coercive or authoritarian connotations of the term.
-          In the same way that children delight in making model trains go forward
-          and back by moving a switch, hackers love making complicated things like
-          computers do nifty stuff for them.
+          Hackers are &lsquo;control freaks&rsquo; in a way that has nothing to
+          do with the usual coercive or authoritarian connotations of the term.
+          In the same way that children delight in making model trains go
+          forward and back by moving a switch, hackers love making complicated
+          things like computers do nifty stuff for them.
           But it has to be their nifty stuff.
           They don't like tedium, nondeterminism, or most of the fussy, boring,
           ill-defined little tasks that go with maintaining a normal existence.
@@ -50,7 +50,7 @@
         Freshman year, I got an email from a professor advertising Stony Brook
         Competitive Programming Club's selection contest, and despite being an
         anxious freshman, I decided to see what the club is about.
-        &ldquot;Worst case I get free pizza and leave, no harm done,&rdquot;
+        &ldquo;Worst case I get free pizza and leave, no harm done,&rdquo;
         I thought.
       </p>
       <p>
@@ -79,14 +79,15 @@
         field of Computer Science, and maybe push the boundaries of what we can
         make computers do.
       </p>
-      <h1>
+      <h1 id="hobbies">
         Hobbies
       </h1>
       <figure>
         <blockquote cite="http://catb.org/jargon/html/personality.html">
-          It is noticeable (and contrary to many outsiders' expectations) that the
-          better a hacker is at hacking, the more likely he or she is to have
-          outside interests at which he or she is more than merely competent.
+          It is noticeable (and contrary to many outsiders' expectations) that
+          the better a hacker is at hacking, the more likely he or she is to
+          have outside interests at which he or she is more than merely
+          competent.
         </blockquote>
         <figcaption>
           &mdash;<cite><a href="http://catb.org/jargon/html/personality.html">
@@ -94,11 +95,82 @@
           </a></cite>
         </figcaption>
       </figure>
-      Hobbies!
-      Flow
-      Competitive Programming
-      Favorite Data Structures
-      Celeste? Minecraft?
+      <p>
+        I enjoy playing video games, though my game library is quite small.
+        Once I get invested in a game, I will try to optimize my gameplay.
+        Call me a tryhard all you want, but once you've played a game long
+        enough, you need something extra to break the monotony.
+        The first game I really put time into was Minecraft.
+        Some redstone videos on YouTube had caught my interest, and the first
+        thing I did when I got the game was fire up a creative world and toy
+        around with making basic circuits.
+        My favorite creation out of all my time playing the game is a fairly
+        useless contraption that can send a block up and down a vertical shaft
+        at 10 blocks per second. To get blocks to move that fast, I had to use
+        (abuse?) a lot of technical mechanics hidden in the internals of
+        Minecraft.
+      </p>
+      <p>
+        The first idea is that the game processes the world in a loop, and that
+        this loop is timed to run 20 times per second.
+        Each pass through the loop is a tick, and you start off doing redstone
+        by taking events that you want to happen in a certain order, and using
+        delay circuitry to orchestrate the events.
+        However, as you learn more about the game, about the order of events
+        withing a single pass through the loop, you can start to manipulate
+        events happening within a single tick.
+        You learn about block updates, how instead of updating every block in
+        the world on every game tick, changes made to the world are processed
+        locally by having block state changes send notifiers to neighboring
+        blocks, which may update their own state and recursively propagate more
+        notifiers.
+        You learn about how components like repeaters and redstone torces create
+        delay by scheduling &lsquo;tile ticks,&rsquo; and you learn how to
+        manipulate this queue of tile ticks to order events within a tick.
+        You learn about how pistons operate on a different system of
+        &lsquo;block events,&rsquo;, and how manipulating block events enables
+        complex behaviors such as instant wire, 0-tick pulses, deleting any
+        block &mdash; even if you're not supposed to be able to break it, and
+        several duplication glitches.
+        In terms of my block elevator, I heavily utilized 0-tick pulses to
+        transport blocks instantly within a tick.
+      </p>
+      <p>
+        Technical Minecraft has advanced to the point at which people are diving
+        into the game's code, tracing game execution to find ways to break the
+        game.
+        Watching a video on obtaining normally unobtainable items is the first
+        time I learned about word tearing, a programming error that shows up in
+        multithreading.
+        While Minecraft is largely single-threaded, people were able to trick
+        the game into keeping a second thread alive, and then were able to
+        coordinate the threads with precise timings induced by hash map
+        collisions to execute the word tearing bug in practice.
+        I suppose this is another example of how &ldquo;making complicated
+        things do nifty stuff&rdquo; is fascinating to me.
+      </p>
+      <p>
+        And I haven't even brought up how the player factors into all of this,
+        how to optimize moving the player from point A to point B.
+        You'd think that this would be basic, but there's a whole wiki called
+        <a href="https://www.mcpk.wiki/wiki/Main_Page">
+          MCPK
+        </a>
+        devoted to just this topic.
+        There's also plenty of techniques for how to build bridges quickly, and
+        multitudes of minigames on servers that start with teams separated by
+        huge empty voids, and swiftly traversing these gaps is key to gaining an
+        advantage over enemy teams.
+        All this is to say that Minecraft is a game with a huge amount of depth,
+        and while I arguably may have spent too much time playing this game, I
+        have enjoyed every second of it.
+      </p>
+      <p>
+        TODO: Celeste
+      </p>
+      <p>
+        TODO: Flow
+      </p>
     </div>
   </body>
 </html>
