@@ -55,3 +55,7 @@ body {
 .overlay_content {
   padding: 4em;
 }
+
+.pixel {
+  image-rendering: pixelated;
+}
