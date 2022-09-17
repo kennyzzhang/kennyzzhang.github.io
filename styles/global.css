@@ -78,14 +78,16 @@ blockquote {
 .expand_image {
   color: inherit;
   text-decoration: inherit;
-  display: block;
-  position: relative;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+.expand_image > * {
+  grid-row-start: 1;
+  grid-column-start: 1;
 }
 
 .expand_image:after {
   content: 'Click to expand image';
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
 }
