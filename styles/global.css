@@ -39,12 +39,16 @@ body {
 
   display: none;
   opacity: 0;
-  transition: opacity .5s;
+  transition: opacity 0.5s;
 }
 
 .overlay:target {
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: .5;
+}
+
+.overlay .overlay_content {
   opacity: 1;
 }
