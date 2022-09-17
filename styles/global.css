@@ -17,7 +17,7 @@ body {
   left: 0px;
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0.5s, opacity 0.5s;
+  transition: visibility 0.25s, opacity 0.25s;
 }
 
 .hover_below_menu:hover > .hover_below_content_wrapper > .hover_below_content {
@@ -34,7 +34,7 @@ body {
 }
 
 .overlay {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   width: 100%;
@@ -47,7 +47,7 @@ body {
 
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0.5s, opacity 0.5s;
+  transition: visibility 0.25s, opacity 0.25s;
 }
 
 .overlay:target {
