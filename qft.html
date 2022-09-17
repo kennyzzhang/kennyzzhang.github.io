@@ -29,25 +29,52 @@
           The plan was to abstract away from plain Conway's Game of Life using
           an existing pattern called the OTCA Metapixel, which allows individual
           metapixels to follow different simulation rules.
-          Then, using the rule variations, simple wires and logic gates could be
-          designed.
+          Then, using the rule variations &mdash; which we called VarLife
+          &mdash; simple wires and logic gates could be designed.
+          The logic gates would be designed on a standard 11&times;11 grid with
+          strict timings so that they are compatible when assembled together.
           Using the logic gates, more complex hardware necessary for a simple
           computer architecture could be built.
-          Finally, tetris could be programmed in this computer's assembly
+          Finally, Tetris could be programmed in this computer's assembly
           language.
         </p>
         <p>
-          That was the plan, anyways. When I joined, there were still some
-          missing logic gates, the existing adder was large, delay circuitry was
-          inefficient, and there was little progress on the more complex
-          circuits.  I got myself heavily involved in the hardware design, and
-          spearheaded the construction of the final computer.
+          That was the plan, anyways.
+          When I joined, while there was a system for how to make ROM, RAM, and
+          other circuitry components, but it all seemed pretty clunky to me.
+          There were no proper latches so RAM was going to be designed by
+          keeping data in loops.
+          As I got to tinkering with VarLife, I found some more compact delay
+          circuitry and was able to shrink down a lot of the existing circuits.
+          I devised a latching mechanism that allowed the creating of a much
+          more compact synchronizer and RAM.
+          I also worked out the details of the read queue, one of the last
+          components that needed to be designed for the computer.
+          Admittedly, my read queue looked like a mess of spaghetti, but it did
+          work.
         </p>
         <p>
           Then also came the conversion from the rule variation simulator to
-          actual metapixels.
-          The original script we had was extraordinarily inefficient,
-          TODO
+          actual Game of Life metapixels.
+          The original script we had was extraordinarily inefficient, taking
+          multiple hours to generate a file whose size is in the gigabyte range.
+          I wrote an improved script leveraging a different file format that is
+          better suited to handle the inherent repetitveness of our pattern, and
+          reduced the runtime down to a handful of seconds, and the output file
+          size down to the hundred kilobyte range.
+        </p>
+        <p>
+          Once this project was done and we had written everything up for our
+          Stack Exchange posts, I had become so more familiar with tinkering in
+          Varlife that I had the urge to redesign the computer.
+          I wanted to use 8&times;8 tiles instead of 11&times;11 because the
+          Game of Life simulator we were using runs more efficiently if the
+          pattern repeats on a power of 2.
+          I also believed I could compact and clean up some of my circuitry
+          further, especially the rat's nest I had made for the read queue.
+          I had a lot of fun experimenting with creating a computer in a very
+          esoteric environment, and learned a lot about computer hardware in the
+          process.
         </p>
       </div>
       <div>
