@@ -40,10 +40,11 @@ body {
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, .5);
+  overflow: auto;
 
   visibility: hidden;
   opacity: 0;
-  transition: opacity 0.5s;
+  transition: visibility 0.5s, opacity 0.5s;
 }
 
 .overlay:target {
