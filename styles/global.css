@@ -90,4 +90,6 @@ blockquote {
 
 .expand_image:after {
   content: 'Click to expand image';
+  grid-row-start: 1;
+  grid-column-start: 1;
 }
