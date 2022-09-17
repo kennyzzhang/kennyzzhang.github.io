@@ -9,8 +9,13 @@
   flex: 1;
 }
 
-.navbar_link {
+.navbar_item {
   padding: 1em;
-  background: grey;
+  background: #888;
   text-align: center;
+}
+
+.navbar_subitem {
+  padding: 1em;
+  background: #ddd;
 }
