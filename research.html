@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>Kenny's Webpage</title>
+    <title>Kenny Zhang</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="styles/global.css" />
     <link rel="icon" href="images/icon.png" type="image/png" />
@@ -11,7 +11,53 @@
     <div class="include include_main_header"></div>
     <div class="include include_navbar"></div>
     <div>
-      SPAA 2022: Automatic HBM Management: Models and Algorithms
+      <h1>Automatic HBM Management</h1>
+      <p>
+        In high performance systems with a large number of cores, there is an
+        emergent type of memory called High Bandwith Memory.
+        It is designed with the same technology as DDR RAM and has similar
+        latency, but as its name suggests, it has a higher bandwidth than
+        regular DDR.
+        It is unable to be a drop-in replacement for DDR due to its limited
+        capacity, so manufacturers offer it as either another level of cache
+        between L3 and DDR, or as a separate region of memory alongside DDR.
+        This choice is offered because the similar latency for HBM and DDR
+        breaks standard caching assumptions, and introducing HBM as another
+        level of cache could double the runtime of latency-sensitive workloads
+        versus omitting HBM.
+        However, keeping the memory separate and managed by software requires
+        programs to be rewritten to take advantage of HBM.
+        In this paper, I explored simulations of a new HBM management algorithm,
+        and evaluated its performance on practical workloads.
+      </p>
+      <div>
+        <cite>
+          Daniel DeLayo, Kenny Zhang, Kunal Agrawal, Michael A. Bender, Jonathan
+          W. Berry, Rathish Das, Benjamin Moseley, and Cynthia A. Phillips.
+          Automatic hbm management: Models and algorithms. In
+          <i>
+            Proceedings of the 34th ACM Symposium on Parallelism in Algorithms
+            and Architectures
+          </i>, SPAA '22, page 147&ndash;159, New York, NY, USA, 2022.
+          Association for Computing Machinery.
+        </cite>
+      </div>
+      <h1>GraphZeppelin</h1>
+      <p>
+      </p>
+      <div>
+        <cite>
+          David Tench, Evan West, Victor Zhang, Michael A. Bender, Abiyaz
+          Chowdhury, J. Ahmed Dellas, Martin Farach-Colton, Tyler Seip, and
+          Kenny Zhang. Graphzeppelin: Storage-friendly sketching for connected
+          components on dynamic graph streams. In
+          <i>
+            Proceedings of the 2022 International Conference on Management of
+            Data
+          </i>, SIGMOD ’22, page 325&ndash;339, New York, NY, USA, 2022.
+          Association for Computing Machinery.
+        </cite>
+      </div>
     </div>
   </body>
 </html>
