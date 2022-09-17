@@ -118,29 +118,31 @@
       <div class="hflex">
         <div>
           <p>
-            The first idea is that the game processes the world in a loop, and that
-            this loop is timed to run 20 times per second.
-            Each pass through the loop is a tick, and you start off doing redstone
-            by taking events that you want to happen in a certain order, and using
-            delay circuitry to orchestrate the events.
+            The first idea is that the game processes the world in a loop, and
+            that this loop is timed to run 20 times per second.
+            Each pass through the loop is a tick, and you start off doing
+            redstone by taking events that you want to happen in a certain
+            order, and using delay circuitry to orchestrate the events.
             However, as you learn more about the game, about the order of events
             withing a single pass through the loop, you can start to manipulate
             events happening within a single tick.
-            You learn about block updates, how instead of updating every block in
-            the world on every game tick, changes made to the world are processed
-            locally by having block state changes send notifiers to neighboring
-            blocks, which may update their own state and recursively propagate more
-            notifiers.
-            You learn about how components like repeaters and redstone torces create
-            delay by scheduling &lsquo;tile ticks,&rsquo; and you learn how to
-            manipulate this queue of tile ticks to order events within a tick.
+            You learn about block updates, how instead of updating every block
+            in the world on every game tick, changes made to the world are
+            processed locally by having block state changes send notifiers to
+            neighboring blocks, which may update their own state and recursively
+            propagate more notifiers.
+            You learn about how components like repeaters and redstone torches
+            create delay by scheduling &lsquo;tile ticks,&rsquo; and you learn
+            how to manipulate this queue of tile ticks to order events within a
+            tick.
             You learn about how pistons operate on a different system of
-            &lsquo;block events,&rsquo;, and how manipulating block events enables
-            complex behaviors such as instant wire, 0-tick pulses, deleting any
-            block &mdash; even if you're not supposed to be able to break it, and
-            several duplication glitches.
-            In terms of my block elevator, I heavily utilized tile tick order to
-            generate 0-tick pulses to transport blocks instantly within a tick.
+            &lsquo;block events,&rsquo; and how manipulating block events
+            enables complex behaviors such as instant wire, 0-tick pulses,
+            deleting any block &mdash; even if you're not supposed to be able to
+            break it, and several duplication glitches.
+            In terms of what I needed for my block elevator, I heavily utilized
+            tile tick order to generate 0-tick pulses to transport blocks
+            instantly within a tick.
           </p>
         </div>
         <div class="hfill"></div>
