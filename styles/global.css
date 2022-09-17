@@ -36,20 +36,17 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, .5);
 
-  display: none;
+  visibility: hidden;
   opacity: 0;
   transition: opacity 0.5s;
 }
 
 .overlay:target {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: .5;
-}
-
-.overlay .overlay_content {
+  visibility: visible;
   opacity: 1;
 }
