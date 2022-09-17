@@ -74,3 +74,18 @@ blockquote {
   text-indent: -0.5in;
   padding-left: 0.5in;
 }
+
+.expand_image {
+  color: inherit;
+  text-decoration: inherit;
+  display: block;
+  position: relative;
+}
+
+.expand_image:after {
+  content: 'Click to expand image';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
