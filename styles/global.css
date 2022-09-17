@@ -7,6 +7,11 @@ body {
   margin: auto;
 }
 
+blockquote {
+  border-left: 4px solid #ddd;
+  padding-left: 16px;
+}
+
 .hover_below_menu > .hover_below_content_wrapper {
   position: relative;
 }
