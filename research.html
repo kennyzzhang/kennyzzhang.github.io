@@ -42,6 +42,23 @@
       </div>
       <h1>GraphZeppelin</h1>
       <p>
+        A common problem in graph processing is calculating connected
+        components.
+        Standard algorithmic techniques require storing all the edges of a graph
+        in memory, which can be worst case <i>O</i>(<i>V</i>^2) and is
+        prohibitive for large graphs.
+        Ideas from linear sketching &mdash; which allow the sampling of one
+        nonzero entry of a large array &mdash; can be applied to graphs to
+        sample an edge incident to a set of vertices.
+        While this allows for the connected components to be computed with high
+        probability in <i>O</i>(<i>V</i>polylog(<i>V</i>)) memory, when we
+        directly implemented this algorithm, the arithmetic of linear sketching
+        was too slow to be practical.
+        We developed a faster hashing-based sketching technique, and demonstrate
+        that our full graph sketching system can perform millions of edge
+        updates per second for graphs whose exact representation would not fit
+        in memory, allowing for processing graphs larger than previously
+        possible.
       </p>
       <div>
         David Tench, Evan West, Victor Zhang, Michael A. Bender, Abiyaz
