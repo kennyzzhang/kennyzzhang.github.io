@@ -15,11 +15,14 @@ body {
   position: absolute;
   top: 0px;
   left: 0px;
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.5s, opacity 0.5s;
 }
 
 .hover_below_menu:hover > .hover_below_content_wrapper > .hover_below_content {
-  display: block;
+  visibility: visible;
+  opacity: 1;
 }
 
 .hflex {
