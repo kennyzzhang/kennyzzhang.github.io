@@ -113,6 +113,10 @@ blockquote {
     background: #222;
   }
 
+  * {
+    scrollbar-color: #444 #222;
+  }
+
   :not(a):not(a *) {
     color: #fff;
   }
