@@ -109,7 +109,15 @@ blockquote {
     display: none;
   }
 
+  html {
+    background: #333;
+  }
+
   * {
     color: #fff;
+  }
+
+  a {
+    color: initial;
   }
 }
