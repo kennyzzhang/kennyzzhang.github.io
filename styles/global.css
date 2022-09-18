@@ -110,10 +110,10 @@ blockquote {
   }
 
   html {
-    background: #333;
+    background: #222;
   }
 
-  * {
+  :not(a):not(a *) {
     color: #fff;
   }
 
