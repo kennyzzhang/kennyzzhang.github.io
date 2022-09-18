@@ -117,6 +117,10 @@ blockquote {
     scrollbar-color: #444 #222;
   }
 
+  blockquote {
+    border-left-color: #333;
+  }
+
   :not(a):not(a *) {
     color: #fff;
   }
