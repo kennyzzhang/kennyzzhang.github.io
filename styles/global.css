@@ -104,7 +104,12 @@ blockquote {
   .darkmode {
     display: initial;
   }
+
   .lightmode {
     display: none;
+  }
+
+  * {
+    color: #fff;
   }
 }
