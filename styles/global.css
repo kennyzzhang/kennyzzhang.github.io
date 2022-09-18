@@ -96,13 +96,14 @@ blockquote {
   grid-column-start: 1;
 }
 
-@media (prefers-color-scheme: light) {
-  .darkmode {
-    display: none;
-  }
+.darkmode {
+  display: none;
 }
 
 @media (prefers-color-scheme: dark) {
+  .darkmode {
+    display: initial;
+  }
   .lightmode {
     display: none;
   }
