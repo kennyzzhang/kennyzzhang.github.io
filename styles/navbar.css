@@ -22,10 +22,10 @@
 
 @media (prefers-color-scheme: dark) {
   .navbar_item {
-    background: #555;
+    background: #444;
   }
 
   .navbar_subitem {
-    background: #444;
+    background: #333;
   }
 }
