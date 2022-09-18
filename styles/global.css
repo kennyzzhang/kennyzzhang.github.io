@@ -97,13 +97,13 @@ blockquote {
 }
 
 @media (prefers-color-scheme: light) {
-  .lightmode {
+  .darkmode {
     display: none;
   }
 }
 
 @media (prefers-color-scheme: dark) {
-  .darkmode {
+  .lightmode {
     display: none;
   }
 }
