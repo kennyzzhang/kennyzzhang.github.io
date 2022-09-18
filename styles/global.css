@@ -128,4 +128,8 @@ blockquote {
   a:active {
     color: #e00;
   }
+
+  .expand_image:after {
+    background: rgba(68, 68, 68, 0.9);
+  }
 }
