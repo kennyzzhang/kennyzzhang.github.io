@@ -118,6 +118,14 @@ blockquote {
   }
 
   a {
-    color: initial;
+    color: #08f;
+  }
+
+  a:visited {
+    color: #a4f;
+  }
+
+  a:active {
+    color: #e00;
   }
 }
