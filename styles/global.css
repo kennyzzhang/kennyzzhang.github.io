@@ -95,3 +95,15 @@ blockquote {
   grid-row-start: 1;
   grid-column-start: 1;
 }
+
+@media (prefers-color-scheme: light) {
+  .lightmode {
+    display: none;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .darkmode {
+    display: node;
+  }
+}
