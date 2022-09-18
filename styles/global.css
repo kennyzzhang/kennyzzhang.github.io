@@ -104,6 +104,6 @@ blockquote {
 
 @media (prefers-color-scheme: dark) {
   .darkmode {
-    display: node;
+    display: none;
   }
 }
